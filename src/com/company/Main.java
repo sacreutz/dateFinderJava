@@ -68,7 +68,7 @@ public class Main {
                         String pattern3 = "yyyy-MM-dd";
                         SimpleDateFormat simpleDateFormat3 = new SimpleDateFormat(pattern3);
                         String currentDate = simpleDateFormat3.format(inputArray[i][j]);
-                        System.out.println(currentDate);
+                       // System.out.println(currentDate);
 
                         long diffNow = (Math.abs(inputArray[i][j].getTime() - now.getTime()));
                         long diff = TimeUnit.DAYS.convert(diffNow, TimeUnit.MILLISECONDS);
@@ -130,8 +130,27 @@ public class Main {
             }
         }
 
+
+        for(Date[] row : array) {
+            printRow(row);
+        }
         return array;
     };
+
+
+    public static void printRow(Date[] row) {
+        for (Date i : row) {
+            String pattern3 = "yyyy-MM-dd";
+            SimpleDateFormat simpleDateFormat3 = new SimpleDateFormat(pattern3);
+            String currentDate = simpleDateFormat3.format(i);
+            System.out.print(currentDate);
+            System.out.print("\t");
+        }
+        System.out.println();
+    }
+
+
+
 
 
 }
